@@ -67,7 +67,8 @@ export function OrderListTemp() {
 }
 
 
-function CheckIcon(props) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function CheckIcon(props:any) {
   return (
     <svg
       {...props}

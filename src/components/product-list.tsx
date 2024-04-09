@@ -8,7 +8,7 @@ import { Button } from "./ui/button"
 import { Product } from "../types"
 import { useNavigate } from "react-router-dom";
 import { deleteProduct } from "../api/task.api";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 
 
@@ -18,10 +18,6 @@ export function ProductList({ products }: { products: Array<Product> | undefined
   const [flag, setFlag] = useState(true);
 
   const navigate = useNavigate();
-
-  useEffect(() => {
-
-  }, products)
 
 
   const onClick = (id:string) => {

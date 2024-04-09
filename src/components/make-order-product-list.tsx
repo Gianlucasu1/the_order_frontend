@@ -4,8 +4,7 @@
  */
 import { CardContent, Card } from "./ui/card"
 import {  TableBody, Table } from "./ui/table"
-import { Product } from "../types"
-import { useEffect } from "react";
+import { Product } from "../types";
 import { ProductToShowOrder } from "./ProductToShowOrder";
 
 
@@ -15,9 +14,7 @@ export function MakeOrderProductList({ products }: { products: Array<Product> | 
 
 
 
-  useEffect(() => {
-
-  }, products)
+ 
 
 
 

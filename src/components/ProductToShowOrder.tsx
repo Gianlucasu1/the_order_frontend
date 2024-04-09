@@ -1,8 +1,7 @@
-import React from 'react'
 import { TableCell, TableRow } from "./ui/table"
 import { Button } from "./ui/button"
 import { Product } from '@/types'
-import { useNavigate, useParams } from 'react-router-dom'
+import {  useParams } from 'react-router-dom'
 import { Label } from './ui/label'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
@@ -16,18 +15,15 @@ interface productToShowOrder {
 
 export const ProductToShowOrder = ({ product }: productToShowOrder) => {
 
-  const navigate = useNavigate();
+  
 
   const { id } = useParams()
 
-  const { register, handleSubmit, formState: {
-    errors
-  } } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = handleSubmit(async (data) => {
     console.log(data);
     await createDetailOrder(Number(id), product.id, data)
-    navigate("/productos")
   })
 
 

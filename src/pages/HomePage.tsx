@@ -1,4 +1,3 @@
-import React from 'react'
 import { MainViewStore } from '../components/main-view-store'
 
 export const HomePage = () => {

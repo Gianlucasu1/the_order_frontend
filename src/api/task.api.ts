@@ -1,5 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios"
-import { Product } from "../types"
 
 const productsApi = axios.create({
   baseURL: 'https://the-order-api-eb7745fd53d7.herokuapp.com/productos/api/v1/productos'

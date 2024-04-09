@@ -1,6 +1,6 @@
 import { getAllOrders } from '@/api/task.api';
 import { Pedido } from '@/types';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Order from './Order';
 
 

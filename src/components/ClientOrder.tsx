@@ -1,16 +1,11 @@
 import { Pedido, Product } from '@/types'
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+
 import { getAllProducts } from '@/api/task.api';
-import { updateOrder } from '../api/task.api';
+import { formatDate } from '@/lib/utils';
+
 
 interface OrderProps {
   pedido: Pedido;
@@ -21,10 +16,7 @@ export default function ClientOrder({ pedido }: OrderProps) {
  // const [ estadoPedido, setEstadoPedido ] = useState("");
 
   
-
   const [productos, setProductos] = useState<Array<Product>>();
-  
-
 
   useEffect(() => {
     async function loadTasks() {    
@@ -39,18 +31,6 @@ export default function ClientOrder({ pedido }: OrderProps) {
 
   }, [])
 
-
-  const handleSelectChange = (newValue:string) => {
-    //setEstadoPedido(newValue);
-    updateOrder(pedido.id, {
-      nombre_cliente: pedido.nombre_cliente,
-      estado: newValue
-    })
-  };
-
-  
-
-
   return (
     <Card className={pedido.estado == "LI" ? "bg-[#F0F9E6]" : "bg-orange-200"} key={pedido.id}>
             <CardHeader className="flex flex-row items-center justify-between gap-5 space-y-0">
@@ -60,7 +40,7 @@ export default function ClientOrder({ pedido }: OrderProps) {
             </CardHeader>
             <CardContent className="flex flex-col gap-2">
               <div className="text-sm font-medium">{pedido.nombre_cliente}</div>
-              <div className="text-sm text-gray-500 dark:text-gray-400">2 min ago</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">{formatDate(pedido.fecha_hora)}</div>
               <div className="text-sm font-medium">Lista de Items:</div>
               {pedido.detalles?.map((detalle) => {
                 const productToShow = productos?.find((producto) => producto.id == detalle.producto)
@@ -72,6 +52,7 @@ export default function ClientOrder({ pedido }: OrderProps) {
                   </div>
                 )
               })}
+              {pedido.estado == "LI" ? <div className="text-sm font-medium">Factura:</div> : <div className="text-sm font-medium">Factura:</div>}
             </CardContent>
 
           </Card>
