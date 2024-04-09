@@ -7,6 +7,7 @@ import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
 import { useForm } from 'react-hook-form'
 import { createDetailOrder } from '@/api/task.api'
+import toast from "react-hot-toast"
 
 
 interface productToShowOrder {
@@ -19,11 +20,17 @@ export const ProductToShowOrder = ({ product }: productToShowOrder) => {
 
   const { id } = useParams()
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = handleSubmit(async (data) => {
     console.log(data);
     await createDetailOrder(Number(id), product.id, data)
+    reset({
+      cantidad: '',
+      observaciones: ''
+    });
+    toast.success('Añadido a la orden correctamente.');
+
   })
 
 

@@ -10,6 +10,8 @@ import MakeOrder from './pages/MakeOrder'
 import OrdersPage from './pages/OrdersPage'
 import { ProductsPage } from './pages/productsPage'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { Toaster } from 'react-hot-toast';
+
 
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Toaster />
       <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />
