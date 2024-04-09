@@ -64,7 +64,7 @@ export function CreateProductForm() {
               {errors.precio && <span>Este campo es requerido</span>}
             </div>
           </div>
-          <Button size="sm">Crear</Button>
+          <Button className="mt-4" size="sm">Crear</Button>
         </form>
       </CardContent>
     </Card>

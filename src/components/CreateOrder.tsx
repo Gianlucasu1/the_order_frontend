@@ -46,7 +46,7 @@ export function CreateOrder() {
 
 
             <div className="flex items-center space-x-2">
-              <Checkbox {...register("es_para_llevar")} id="terms" required/>
+              <Checkbox {...register("es_para_llevar")} id="terms"/>
               <label
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -57,7 +57,7 @@ export function CreateOrder() {
             
 
           </div>
-          <Button size="sm">Crear</Button>
+          <Button className="mt-4" size="sm">Crear</Button>
         </form>
       </CardContent>
     </Card>

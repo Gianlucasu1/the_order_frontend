@@ -2,19 +2,19 @@ import axios from "axios"
 import { Product } from "../types"
 
 const productsApi = axios.create({
-  baseURL: 'http://127.0.0.1:8000/productos/api/v1/productos'
+  baseURL: 'https://the-order-api-eb7745fd53d7.herokuapp.com/productos/api/v1/productos'
 })
 
 const restaurantesApi = axios.create({
-  baseURL: 'http://127.0.0.1:8000/restaurantes/api/v1/restaurantes'
+  baseURL: 'https://the-order-api-eb7745fd53d7.herokuapp.com/restaurantes/api/v1/restaurantes'
 })
 
 const ordersApi = axios.create({
-  baseURL: 'http://127.0.0.1:8000/pedidos/api/v1/pedidos'
+  baseURL: 'https://the-order-api-eb7745fd53d7.herokuapp.com/pedidos/api/v1/pedidos'
 })
 
 const detailOrdersApi = axios.create({
-  baseURL: 'http://127.0.0.1:8000/pedidos/api/v1/detallesPedido'
+  baseURL: 'https://the-order-api-eb7745fd53d7.herokuapp.com/pedidos/api/v1/detallesPedido'
 })
 
 

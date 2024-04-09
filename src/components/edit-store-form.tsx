@@ -76,7 +76,7 @@ export function EditStoreForm() {
               {errors.precio && <span>Este campo es requerido</span>}
             </div>
           </div>
-          <Button size="sm">Actualizar</Button>
+          <Button className="mt-4" size="sm">Actualizar</Button>
         </form>
       </CardContent>
     </Card>
